@@ -25,7 +25,7 @@ namespace Restaurant
       services.AddMvc();
 
       services.AddEntityFrameworkMySql()
-      .AddDbContext<RestaurantContext>(options => options
+      .AddDbContext<RestaurantFinderContext>(options => options
       .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
     }
 

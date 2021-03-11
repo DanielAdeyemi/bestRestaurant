@@ -1,0 +1,12 @@
+@{
+    Layout = "_Layout";
+}
+
+@model RestaurantFinder.Models.Cuisine;
+
+@Html.DisplayFor(model => model.Name)
+@using (Html.BeginForm())
+{
+    <input class="btn btn-primary" type="submit" value="Delete"/>
+}
+<button class="btn btn-dark">@Html.ActionLink("Return to Cuisines", "Index");

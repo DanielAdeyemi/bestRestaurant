@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace RestaurantFinder.Models
 {
     public class Cuisine
@@ -11,4 +13,18 @@ namespace RestaurantFinder.Models
             this.Restaurants = new HashSet<Restaurant>();
         }
     }
+
+    public enum Name
+        {
+            Thai,
+            Chinese,
+            American,
+            Mexican,
+            French,
+            Spanish,
+            Russian,
+            Polish,
+            Japanese,
+            Indian
+        }
 }

@@ -1,0 +1,11 @@
+@{
+    Layout = "_Layout";
+}
+
+
+@model RestaurantFinder.Models.Cuisine;
+<h1>@Html.DisplayFor(model => model.Name) Food</h1>
+
+<button class="btn btn-dark">@Html.ActionLink("Return to Cuisines", "Index")</button>
+<button class="btn btn-danger">@Html.ActionLink("Delete Cuisine", "Delete", new { id = Model.CuisineId })</button>
+<button class="btn btn-dark">@Html.ActionLink("Return to Home", "Index", "Home")</button>

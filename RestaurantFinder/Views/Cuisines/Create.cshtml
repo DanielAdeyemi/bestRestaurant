@@ -1,0 +1,14 @@
+@{
+    Layout = "_Layout";
+}
+@using RestaurantFinder.Models
+@model RestaurantFinder.Models.Cuisine
+<h1>Add a Cuisine</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name);
+    @Html.DropDownListFor(model => model.Name, new SelectList(Enum.GetValues(typeof(Name))), "Select Cuisine type:", new { @class = "form-control"});
+    <input type="submit" value="Add new cuisine" class="btn btn-primary"/>
+}
+<button class="btn btn-dark">@Html.ActionLink("Return to Cuisines", "Index")</button>
