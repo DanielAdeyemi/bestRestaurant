@@ -13,7 +13,7 @@
     @Html.TextBoxFor(model => model.Description, new { @required="required"})
     @Html.LabelFor(model => model.Hours)
     @Html.TextBoxFor(model => model.Hours, new {@maxlength="20", @required="required"})
-    @Html.LabelFor(model => model.NumberOfEmployees, "Number of Employees", new { @required="required"})
+    @Html.LabelFor(model => model.NumberOfEmployees, new { @required="required"})
     @Html.TextBoxFor(model => model.NumberOfEmployees, new { @type="number", @min=1, @required="required"})
     @Html.LabelFor(model => model.Cuisine)
     @Html.DropDownListFor(model => model.Cuisine.Name, new SelectList(Enum.GetValues(typeof(Name))), "Select Cuisine type:", new { @class = "form-control", @required="required"})
