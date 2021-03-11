@@ -2,9 +2,18 @@
     Layout = "_Layout";
 }
 
-
+@using RestaurantFinder.Models;
 @model RestaurantFinder.Models.Cuisine;
 <h1>@Html.DisplayFor(model => model.Name) Food</h1>
+
+@if (Model.Restaurants.Count == 0)
+{
+    <h3>No Restaurants have been added yet</h3>
+}
+@foreach (Restaurant restaurant in Model.Restaurants)
+{
+    <li>Restaurant: @Html.ActionLink(@restaurant.Name, "Details", "Restaurants", new { id = restaurant.RestaurantId })</li>
+}
 
 <button class="btn btn-dark">@Html.ActionLink("Return to Cuisines", "Index")</button>
 <button class="btn btn-danger">@Html.ActionLink("Delete Cuisine", "Delete", new { id = Model.CuisineId })</button>
