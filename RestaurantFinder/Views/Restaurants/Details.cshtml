@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RestaurantFinder.Models.Restaurant
+
+<h2>Restaurant Details:</h2>
+<hr />
+<h4>@Html.DisplayNameFor(model=>model.Name): @Html.DisplayFor(model=>model.Name)<h4>
+<h4>@Html.DisplayNameFor(model=>model.Description): @Html.DisplayFor(model=>model.Description)<h4>
+<h4>@Html.DisplayNameFor(model=>model.NumberOfEmployees): @Html.DisplayFor(model=>model.NumberOfEmployees, "Number of Employees")<h4>
+<h4>@Html.DisplayNameFor(model=>model.Hours): @Html.DisplayFor(model=>model.Hours)<h4>
+<h4>@Html.DisplayNameFor(model=>model.Cuisine): @Html.DisplayFor(model=>model.Cuisine.Name)<h4>
+
+<button class="btn btn-dark">@Html.ActionLink("Back to restaurants", "Index")</button>
+<button class="btn btn-dark">@Html.ActionLink("Edit details", "Edit")</button>
+<button class="btn btn-dark">@Html.ActionLink("Delete restaurant", "Delete")</button>
+<button class="btn btn-dark">@Html.ActionLink("Go to Cuisine", "Details", "Cuisines", new { id = Model.CuisineId})</button>
+<button class="btn btn-dark">@Html.ActionLink("Back to home page", "Index", "Home")</button>
