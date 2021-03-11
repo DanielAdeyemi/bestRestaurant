@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace RestaurantFinder.Controllers
 {
     public class CuisinesController : Controller 
@@ -17,7 +18,7 @@ namespace RestaurantFinder.Controllers
 
         public ActionResult Index()
         {
-            List<Cuisine> model = _db.Cuisines.ToList();
+            ICollection<Cuisine> model = _db.Cuisines.ToHashSet();
             return View(model);
         }
 
